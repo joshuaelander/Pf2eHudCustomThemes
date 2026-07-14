@@ -68,14 +68,25 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar {
     --variant-box-shadow: inset 0 0 0 1px var(--custom-border) !important;
 }
 
-/* Section Headers */
-/* Styles the category dividers (e.g., "Cantrips", "Rank 1", "Melee Attacks") */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar header {
     background: var(--custom-header) !important;
-    border-bottom: 1px solid var(--custom-border) !important;
+    border-bottom: 2px solid var(--custom-border) !important; /* Thicker border for contrast */
     border-radius: var(--custom-radius, 0) !important;
-    margin-bottom: 4px !important;
-    padding-left: 8px !important;
+    margin-top: 8px !important;
+    margin-bottom: 6px !important;
+    padding: 4px 8px !important;
+    
+    /* Typography adjustments to make it pop */
+    font-size: 1.10em !important; 
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 0 8px var(--custom-glow) !important; /* Neon text glow */
+    color: #ffffff !important;
+}
+
+/* Ensure any spans or icons inside the header also inherit the glow */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar header * {
+    text-shadow: 0 0 8px var(--custom-glow) !important;
 }
 
 /* Individual Items (Spells, Weapons, Skills, Consumables) */
@@ -111,4 +122,116 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar [d
     color: var(--custom-text, #fff) !important;
     border-radius: var(--custom-radius, 0) !important;
     clip-path: var(--custom-clip-small, none) !important;
+}
+
+/* Targets the PF2e HUD Combat Tracker */
+/* Main Tracker Container */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker {
+    background: var(--custom-bg-solid) !important;
+    border: 1px solid var(--custom-border) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    box-shadow: 0 0 20px var(--custom-glow) !important;
+    clip-path: var(--custom-clip-large, none) !important;
+}
+
+/* Tracker Header and Footer */
+/* Overrides the default "2px groove black" with your solid theme borders */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker header {
+    background: var(--custom-header) !important;
+    border-bottom: 2px solid var(--custom-border) !important;
+}
+
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker footer {
+    background: var(--custom-header) !important;
+    border-top: 2px solid var(--custom-border) !important;
+}
+
+/* Individual Combatants */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker .combatant {
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Hovering over a combatant */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker .combatant:hover {
+    background: var(--custom-hover) !important;
+}
+
+/* The Active Turn Combatant */
+/* Replaces the default disposition color with a glowing theme border */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker .combatant.active {
+    background: var(--custom-hover) !important;
+    box-shadow: inset 0 0 15px var(--custom-glow) !important;
+    border-left: 4px solid var(--custom-border) !important;
+}
+
+/* Apply geometry to token avatars inside the tracker */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker .combatant .avatar img {
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+}
+
+/* Targets the PF2e HUD Tooltip containers */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip {
+    /* Override the HUD's default dark background with your theme variables */
+    --outer-background: var(--custom-bg-solid) !important;
+    --outer-border: 1px solid var(--custom-border) !important;
+    --outer-border-radius: var(--custom-radius, 0) !important;
+    --outer-box-shadow: 0 0 10px var(--custom-glow) !important;
+}
+
+/* Tooltip Content Wrapper */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .distance,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .status {
+    background: var(--outer-background) !important;
+    border: var(--outer-border) !important;
+    border-radius: var(--outer-border-radius) !important;
+    box-shadow: var(--outer-box-shadow) !important;
+    color: var(--custom-text, #ffffff) !important;
+}
+
+/* The Status "Health/Status" Label */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .status {
+    text-shadow: 0 0 5px var(--custom-glow) !important;
+}
+
+/* ========================================= */
+/*    NATIVE PF2E SYSTEM DIALOGS             */
+/* ========================================= */
+/* Styles the core Foundry/PF2e popups (e.g., Attack/Damage modifier prompts) */
+/* Main Dialog Window */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .app.dialog,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .pf2e.app.window-app {
+    background: var(--custom-bg-solid) !important;
+    border: 1px solid var(--custom-border) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    box-shadow: 0 0 20px var(--custom-glow) !important;
+    clip-path: var(--custom-clip-large, none) !important;
+}
+
+/* Dialog Headers (Window Title Bar) */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .app.dialog .window-header,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .pf2e.app.window-app .window-header {
+    background: var(--custom-header) !important;
+    border-bottom: 2px solid var(--custom-border) !important;
+    border-radius: 0 !important;
+    text-shadow: 0 0 8px var(--custom-glow) !important;
+}
+
+/* Dialog Buttons (e.g., "Roll", "Cancel") */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .app.dialog button,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .pf2e.app.window-app button {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid var(--custom-border) !important;
+    color: #fff !important;
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Button Hover State */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .app.dialog button:hover,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) .pf2e.app.window-app button:hover {
+    background: var(--custom-hover) !important;
+    box-shadow: inset 0 0 10px var(--custom-glow) !important;
+    text-shadow: 0 0 8px var(--custom-glow) !important;
 }
