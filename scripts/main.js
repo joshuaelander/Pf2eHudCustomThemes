@@ -26,8 +26,18 @@ Hooks.once("init", () => {
     });
 
     game.settings.register(MODULE_ID, "colorizeIcons", {
-        name: "Colorize HUD Icons",
-        hint: "Tint HUD and menu icons to better match the selected theme.",
+        name: "Colorize Macro Icons",
+        hint: "Tint macro and shortcut images to better match the selected theme.",
+        scope: "client",
+        config: true,
+        type: Boolean,
+        default: false,
+        onChange: () => applyTheme()
+    });
+
+    game.settings.register(MODULE_ID, "colorizeHudIcons", {
+        name: "Colorize PF2e HUD Icons",
+        hint: "Tint built-in PF2e HUD buttons such as saves, actions, perception, and menu buttons.",
         scope: "client",
         config: true,
         type: Boolean,
@@ -70,6 +80,7 @@ function applyTheme() {
 
     const themeName = game.settings.get(MODULE_ID, "activeTheme");
     const colorizeIcons = game.settings.get(MODULE_ID, "colorizeIcons");
+    const colorizeHudIcons = game.settings.get(MODULE_ID, "colorizeHudIcons");
     const fontFamily = game.settings.get(MODULE_ID, "fontFamily");
 
     if (themeName && themeName !== "default") {
@@ -78,8 +89,15 @@ function applyTheme() {
 
     document.body.style.setProperty("--custom-font-stack", resolveFontStack(fontFamily));
     document.body.style.setProperty(
-        "--custom-icon-filter",
+        "--custom-macro-icon-filter",
         colorizeIcons && themeName !== "default"
+            ? getIconFilter(themeName)
+            : "none"
+    );
+
+    document.body.style.setProperty(
+        "--custom-hud-icon-filter",
+        colorizeHudIcons && themeName !== "default"
             ? getIconFilter(themeName)
             : "none"
     );

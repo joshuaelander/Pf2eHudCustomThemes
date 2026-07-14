@@ -56,17 +56,19 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent
 
 /* HUD and Menu Icons */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] img,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] svg,
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar img,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar svg,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar img,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar svg {
-    filter: var(--custom-icon-filter, none) !important;
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar img {
+    filter: var(--custom-macro-icon-filter, none) !important;
 }
 
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] svg,
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar svg,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar svg {
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar svg,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .icon,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .button-icon,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .menu-icon,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] [data-icon] {
+    filter: var(--custom-hud-icon-filter, none) !important;
     color: var(--custom-border, #ffffff) !important;
     fill: currentColor !important;
     stroke: currentColor !important;
