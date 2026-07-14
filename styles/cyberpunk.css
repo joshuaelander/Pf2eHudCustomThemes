@@ -1,9 +1,9 @@
 body.pf2e-hud-theme-cyberpunk {
     --custom-bg: rgba(26, 26, 26, 0.95);
     --custom-bg-solid: rgba(20, 20, 20, 1);
-    --custom-header: rgba(255, 0, 60, 0.3);
+    --custom-header: #7e2377;
     --custom-border: #fcee0a; 
-    --custom-glow: rgba(255, 0, 60, 0.4); 
+    --custom-glow: #7e2377; 
     --custom-hover: rgba(0, 240, 255, 0.2); 
     
     --custom-radius: 0;

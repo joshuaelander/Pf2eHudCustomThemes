@@ -2,7 +2,7 @@ body.pf2e-hud-theme-fantasy {
     --custom-bg: rgba(43, 31, 23, 0.95); /* Deep Leather Brown */
     --custom-bg-solid: rgba(30, 20, 15, 0.98); 
     --custom-header: rgba(212, 175, 55, 0.2);
-    --custom-border: #d4af37; /* Metallic Gold */
+    --custom-border: #5f1f29; /* Metallic Gold */
     --custom-glow: rgba(0, 0, 0, 0.5); /* Shadow rather than glow */
     --custom-hover: rgba(212, 175, 55, 0.15);
     
