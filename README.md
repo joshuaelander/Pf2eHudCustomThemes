@@ -34,14 +34,14 @@ A sleek, modern sci-fi interface inspired by tactical RPGs, perfect for modern, 
 - [x] Implement the **XCOM Tactical** theme using CSS variables and `clip-path` geometries.
 - [x] Verify zero conflicts with `ApplicationV2` render lifecycles.
 
-### ⏳ Phase 2: Theme Expansion (Pending)
+### ⏳ Phase 2: Theme Expansion (Completed)
 The architecture is built to support infinite themes. The next step is expanding the visual roster.
-- [ ] **Fantasy / Parchment Theme:** Leather textures, brass borders, and stylized serif typography.
-- [ ] **Cyberpunk Theme:** High-contrast neon pink/yellow, glitch animations on hover, and darkened glass panels.
-- [ ] **Minimalist Dark Mode:** Stripping away all borders and using pure negative space and subtle drop-shadows for a distraction-free UI.
+- [x] **Fantasy / Parchment Theme:** Leather textures, brass borders, and stylized serif typography.
+- [x] **Cyberpunk Theme:** High-contrast neon pink/yellow, glitch animations on hover, and darkened glass panels.
+- [x] **Minimalist Dark Mode:** Stripping away all borders and using pure negative space and subtle drop-shadows for a distraction-free UI.
 
-### ⏳ Phase 3: User Customization & Polish (Pending)
+### ✅ Phase 3: User Customization & Polish (Completed)
 Giving users more control over their chosen theme without needing to edit CSS files.
-- [ ] **Dynamic Color Pickers:** Extend the module settings to allow users to override the primary and accent hex colors of their selected theme.
-- [ ] **Animation Toggles:** A setting to disable holographic flickers or hover animations for users who prefer static UI or need higher performance.
-- [ ] **Font Overrides:** Options to select custom Google Fonts (like Orbitron or Rajdhani) natively from the settings menu.
+- [x] **Theme-Aware HUD Tooltips:** Tooltip styling now inherits the active HUD theme so hover info feels consistent with the rest of the interface.
+- [x] **Icon Tinting Toggle:** A module setting lets users tint HUD and menu icons to better match the selected theme.
+- [x] **Font Overrides:** Module settings now allow users to choose HUD and menu font stacks, including Google-hosted options such as Orbitron, Rajdhani, Cinzel, and Inter.
