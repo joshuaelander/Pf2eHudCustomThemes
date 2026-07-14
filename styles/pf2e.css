@@ -1,0 +1,13 @@
+body.pf2e-hud-theme-pf2e {
+    --custom-bg: rgba(94, 0, 0, 0.95); /* Paizo Core Red */
+    --custom-bg-solid: rgba(60, 0, 0, 1);
+    --custom-header: rgba(209, 176, 117, 0.25);
+    --custom-border: #d1b075; /* Paizo Gold Trim */
+    --custom-glow: rgba(0, 0, 0, 0.6); 
+    --custom-hover: rgba(255, 255, 255, 0.15);
+    
+    /* Classic UI rounding */
+    --custom-radius: 4px;
+    --custom-clip-large: none;
+    --custom-clip-small: none;
+}

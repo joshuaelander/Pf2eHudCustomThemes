@@ -1,0 +1,53 @@
+/* Activate this mapping ONLY if a theme (other than default) is selected */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent {
+    /* Main Panels */
+    --panel-background: var(--custom-bg) !important;
+    
+    /* THE MENU FIX: These target the expanded action menus and headers */
+    --outer-background: var(--custom-bg-solid) !important;
+    --header-background: var(--custom-header) !important;
+    
+    /* Borders and Geometry */
+    --outer-border: 1px solid var(--custom-border) !important;
+    --outer-border-radius: var(--custom-radius, 0) !important; 
+}
+
+/* Structural Panels & Menus */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel],
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="menu"] .group {
+    clip-path: var(--custom-clip-large, none) !important;
+    box-shadow: inset 0 0 15px var(--custom-glow) !important;
+    border: none !important;
+}
+
+/* Action Buttons & Shortcuts */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut {
+    background: var(--custom-bg) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+    border: 1px solid var(--custom-border) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Button Hovers */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut:hover {
+    background: var(--custom-hover) !important;
+    box-shadow: inset 0 0 12px var(--custom-glow) !important;
+}
+
+/* Internal Images */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut .image,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut .overlay {
+    border-radius: var(--custom-radius, 0) !important;
+}
+
+/* Hotbar Overrides */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar li {
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+    border: 1px solid var(--custom-border) !important;
+    background: var(--custom-bg) !important;
+}
+
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar li img {
+    border-radius: var(--custom-radius, 0) !important;
+}

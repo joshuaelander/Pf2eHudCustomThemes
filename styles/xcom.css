@@ -1,79 +1,13 @@
-/* ========================================= */
-/* 1. THE XCOM VARIABLES                     */
-/* ========================================= */
 body.pf2e-hud-theme-xcom {
-    /* XCOM Color Palette */
-    --xcom-bg: rgba(10, 15, 20, 0.95);
-    --xcom-panel: rgba(17, 33, 44, 0.95);
-    --xcom-border: #3fd6ff;
-    --xcom-text: #ffffff;
-    --xcom-glow: rgba(0, 200, 255, 0.3);
-    --xcom-hover: rgba(0, 200, 255, 0.15);
-
-    /* The core XCOM angled cut geometries */
-    --xcom-clip-large: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-    --xcom-clip-small: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-}
-
-/* ========================================= */
-/* 2. HIJACKING THE CORE VARIABLES           */
-/* ========================================= */
-/* This forces the HUD's native CSS to use our XCOM theme colors */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent {
-    --panel-background: var(--xcom-panel) !important;
-    --outer-border: 1px solid var(--xcom-border) !important;
-    --outer-border-radius: 0 !important; /* XCOM uses sharp edges, not rounded corners */
-}
-
-/* ========================================= */
-/* 3. STRUCTURAL PANELS & MENUS              */
-/* ========================================= */
-/* Applies the angled cuts to the main structural blocks and menu groups */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel],
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel="menu"] .group {
-    clip-path: var(--xcom-clip-large) !important;
-    box-shadow: inset 0 0 15px var(--xcom-glow) !important;
-    border: none !important; /* We remove the standard border because clip-path cuts it off anyway */
-}
-
-/* We need to re-add a simulated border using background gradients for clipped elements if desired, 
-   but for now, the inner glow handles the edge definition beautifully. */
-
-/* ========================================= */
-/* 4. THE ACTION BUTTONS (Shortcuts)         */
-/* ========================================= */
-/* Targets the main Strike/Spell buttons inside the shortcuts panel */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut {
-    background: var(--xcom-bg) !important;
-    clip-path: var(--xcom-clip-small) !important;
-    border: 1px solid var(--xcom-border) !important;
-    transition: all 0.2s ease-in-out !important;
-}
-
-/* Hover effect for action buttons to create a holographic CRT flash */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut:hover {
-    background: var(--xcom-hover) !important;
-    box-shadow: inset 0 0 12px var(--xcom-glow) !important;
-}
-
-/* Ensure images inside shortcuts respect the sharp corners */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut .image,
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut .overlay {
-    border-radius: 0 !important;
-}
-
-/* ========================================= */
-/* 5. THE HOTBAR OVERRIDES                   */
-/* ========================================= */
-/* Targets the specific action bar items at the bottom */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent #hotbar #action-bar li {
-    border-radius: 0 !important;
-    clip-path: var(--xcom-clip-small) !important;
-    border: 1px solid var(--xcom-border) !important;
-    background: var(--xcom-bg) !important;
-}
-
-/* Keep the macro images sharp to match the UI */
-body.pf2e-hud-theme-xcom #pf2e-hud-persistent #hotbar #action-bar li img {
-    border-radius: 0 !important;
+    --custom-bg: rgba(10, 15, 20, 0.95);
+    --custom-bg-solid: rgba(17, 33, 44, 0.98); /* Solid color for pop-up menus */
+    --custom-header: rgba(0, 200, 255, 0.2); 
+    --custom-border: #3fd6ff;
+    --custom-glow: rgba(0, 200, 255, 0.3);
+    --custom-hover: rgba(0, 200, 255, 0.15);
+    
+    /* Geometries */
+    --custom-radius: 0;
+    --custom-clip-large: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    --custom-clip-small: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
