@@ -1,0 +1,33 @@
+{
+  "id": "pf2e-hud-custom-themes",
+  "title": "Custom Themes for PF2e HUD",
+  "description": "A collection of UI themes for the PF2e HUD.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Aeneas"
+    }
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "pf2e",
+        "type": "system"
+      },
+      {
+        "id": "pf2e-hud",
+        "type": "module"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/xcom.css"
+  ]
+}
