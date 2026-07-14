@@ -5,6 +5,7 @@ body.pf2e-hud-theme-xcom {
     --custom-border: #3fd6ff;
     --custom-glow: rgba(0, 200, 255, 0.3);
     --custom-hover: rgba(0, 200, 255, 0.15);
+    --custom-icon-filter: brightness(1.1) saturate(1.25) hue-rotate(180deg);
     
     /* Geometries */
     --custom-radius: 0;

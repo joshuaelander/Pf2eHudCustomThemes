@@ -5,6 +5,7 @@ body.pf2e-hud-theme-fantasy {
     --custom-border: #5f1f29; /* Metallic Gold */
     --custom-glow: rgba(0, 0, 0, 0.5); /* Shadow rather than glow */
     --custom-hover: rgba(212, 175, 55, 0.15);
+    --custom-icon-filter: brightness(1.08) saturate(1.15) sepia(0.28) hue-rotate(-22deg);
     
     /* Rounded corners, no sharp clip-paths */
     --custom-radius: 6px;

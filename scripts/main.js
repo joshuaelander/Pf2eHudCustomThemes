@@ -80,7 +80,7 @@ function applyTheme() {
     document.body.style.setProperty(
         "--custom-icon-filter",
         colorizeIcons && themeName !== "default"
-            ? "brightness(1.08) saturate(1.25) drop-shadow(0 0 4px var(--custom-glow, rgba(255,255,255,0.2)))"
+            ? getIconFilter(themeName)
             : "none"
     );
 
@@ -99,6 +99,20 @@ function loadFont(fontFamily) {
     link.href = fontUrl;
     link.dataset.pf2eHudThemeFont = fontFamily;
     document.head.appendChild(link);
+}
+
+function getIconFilter(themeName) {
+    switch (themeName) {
+        case "cyberpunk":
+            return "brightness(1.12) saturate(1.35) hue-rotate(24deg)";
+        case "fantasy":
+            return "brightness(1.08) saturate(1.15) sepia(0.28) hue-rotate(-22deg)";
+        case "pf2e":
+            return "brightness(1.05) saturate(1.1) hue-rotate(10deg)";
+        case "xcom":
+        default:
+            return "brightness(1.1) saturate(1.25) hue-rotate(180deg)";
+    }
 }
 
 function resolveFontStack(fontFamily) {

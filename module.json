@@ -2,7 +2,7 @@
   "id": "pf2e-hud-custom-themes",
   "title": "Custom Themes for PF2e HUD",
   "description": "A collection of UI themes for the PF2e HUD.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14"

@@ -5,6 +5,7 @@ body.pf2e-hud-theme-pf2e {
     --custom-border: #dcdcd2; /* Paizo Gold Trim */
     --custom-glow: rgba(0, 0, 0, .5); 
     --custom-hover: #5e0000;
+    --custom-icon-filter: brightness(1.05) saturate(1.1) hue-rotate(10deg);
     
     /* Classic UI rounding */
     --custom-radius: 4px;

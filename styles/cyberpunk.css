@@ -5,6 +5,7 @@ body.pf2e-hud-theme-cyberpunk {
     --custom-border: #fcee0a; 
     --custom-glow: #7e2377; 
     --custom-hover: rgba(0, 240, 255, 0.2); 
+    --custom-icon-filter: brightness(1.12) saturate(1.35) hue-rotate(24deg);
     
     --custom-radius: 0;
     --custom-clip-large: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
