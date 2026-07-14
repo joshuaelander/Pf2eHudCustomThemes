@@ -10,15 +10,16 @@ body.pf2e-hud-theme-fantasy {
     --custom-hover: rgba(212, 175, 55, 0.15);
     --custom-icon-filter: brightness(1.08) saturate(1.15) sepia(0.28) hue-rotate(-22deg);
 
-    /* Multi-color icon tints — warm earth tones */
-    --custom-icon-filter-action: sepia(1) brightness(1.1) saturate(1.3) sepia(0.35) hue-rotate(-15deg);
-    /* Burnished gold */
-    --custom-icon-filter-spell: sepia(1) brightness(1.05) saturate(1.4) sepia(0.2) hue-rotate(220deg);
-    /* Mystic blue-silver */
-    --custom-icon-filter-item: sepia(1) brightness(1.12) saturate(1.2) sepia(0.3) hue-rotate(60deg);
-    /* Verdant green */
-    --custom-icon-filter-menu: sepia(1) brightness(1.08) saturate(1.1) sepia(0.4) hue-rotate(-30deg);
-    /* Antique bronze */
+    /* Fantasy Image Filters: Crimson Actions, Arcane Purple Spells, Gold Items */
+    --custom-img-filter-action: sepia(1) saturate(400%) hue-rotate(340deg) brightness(0.9);
+    --custom-img-filter-spell: sepia(1) saturate(300%) hue-rotate(260deg) brightness(1.1);
+    --custom-img-filter-item: sepia(1) saturate(300%) hue-rotate(10deg) brightness(0.8);
+
+    /* FontAwesome Colors */
+    --custom-font-color-action: #8b0000;
+    /* Deep Red */
+    --custom-font-color-menu: #d4af37;
+    /* Metallic Gold */
 
     /* Rounded corners, no sharp clip-paths */
     --custom-radius: 6px;
