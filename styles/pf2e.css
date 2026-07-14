@@ -1,12 +1,24 @@
 body.pf2e-hud-theme-pf2e {
-    --custom-bg: #786452; /* Paizo Core Red */
+    --custom-bg: #786452;
+    /* Paizo Core Red */
     --custom-bg-solid: #786452;
     --custom-header: #5e0000;
-    --custom-border: #dcdcd2; /* Paizo Gold Trim */
-    --custom-glow: rgba(0, 0, 0, .5); 
+    --custom-border: #dcdcd2;
+    /* Paizo Gold Trim */
+    --custom-glow: rgba(0, 0, 0, .5);
     --custom-hover: #5e0000;
     --custom-icon-filter: brightness(1.05) saturate(1.1) hue-rotate(10deg);
-    
+
+    /* Multi-color icon tints — PF2e brand tones */
+    --custom-icon-filter-action: sepia(1) brightness(1.1) saturate(1.3) hue-rotate(345deg);
+    /* Paizo crimson */
+    --custom-icon-filter-spell: sepia(1) brightness(1.05) saturate(1.25) hue-rotate(220deg);
+    /* Arcane blue */
+    --custom-icon-filter-item: sepia(1) brightness(1.12) saturate(1.15) sepia(0.2) hue-rotate(35deg);
+    /* Warm gold */
+    --custom-icon-filter-menu: sepia(1) brightness(1.05) saturate(1.05) hue-rotate(10deg);
+    /* Neutral warm */
+
     /* Classic UI rounding */
     --custom-radius: 4px;
     --custom-clip-large: none;

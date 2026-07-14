@@ -1,4 +1,8 @@
+/* ========================================= */
+/*   BASE MAPPING — PF2e HUD Custom Themes   */
+/* ========================================= */
 /* Activate this mapping ONLY if a theme (other than default) is selected */
+
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) {
     --custom-text: #f7f2e8;
     --custom-font-stack: inherit;
@@ -16,14 +20,14 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip {
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent {
     /* Main Panels */
     --panel-background: var(--custom-bg) !important;
-    
+
     /* THE MENU FIX: These target the expanded action menus and headers */
     --outer-background: var(--custom-bg-solid) !important;
     --header-background: var(--custom-header) !important;
-    
+
     /* Borders and Geometry */
     --outer-border: 1px solid var(--custom-border) !important;
-    --outer-border-radius: var(--custom-radius, 0) !important; 
+    --outer-border-radius: var(--custom-radius, 0) !important;
 }
 
 /* Structural Panels & Menus */
@@ -32,6 +36,20 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent
     clip-path: var(--custom-clip-large, none) !important;
     box-shadow: inset 0 0 15px var(--custom-glow) !important;
     border: none !important;
+}
+
+/* ========================================= */
+/*   SHORTCUT BAR CONTAINER (Issue 3)        */
+/* ========================================= */
+/* Gives the shortcuts panel its own themed container — matching the
+   treatment already applied to the sidebar, tracker, and hotbar. */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] {
+    background: var(--custom-bg) !important;
+    border: 1px solid var(--custom-border) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    box-shadow: 0 0 10px var(--custom-glow) !important;
+    clip-path: var(--custom-clip-large, none) !important;
+    padding: 0px !important;
 }
 
 /* Action Buttons & Shortcuts */
@@ -54,27 +72,64 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent
     border-radius: var(--custom-radius, 0) !important;
 }
 
-/* HUD and Menu Icons */
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] img,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar img,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar img {
-    filter: var(--custom-macro-icon-filter, none) !important;
+
+/* ========================================= */
+/* MULTI-COLOR ICON TINTING (Corrected)    */
+/* ========================================= */
+
+/* --- MACRO / SHORTCUT IMAGES (.webp / .png) --- */
+
+/* Action-type shortcut images */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="action"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="feat"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="melee"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="ranged"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar img {
+    filter: var(--custom-img-filter-action, none) !important;
 }
 
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] svg,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar svg,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar svg,
+/* Spell shortcut images */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="spell"] img {
+    filter: var(--custom-img-filter-spell, none) !important;
+}
+
+/* Item / consumable shortcut images */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="consumable"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="equipment"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="weapon"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="armor"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] .shortcut[data-item-type="shield"] img,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar img {
+    filter: var(--custom-img-filter-item, none) !important;
+}
+
+/* --- HUD BUILT-IN ICONS (FontAwesome <i> tags and SVGs) --- */
+
+/* Action-type HUD icons */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .icon,
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .button-icon,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .menu-icon,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] [data-icon] {
-    filter: var(--custom-hud-icon-filter, none) !important;
-    color: var(--custom-border, #ffffff) !important;
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel="shortcuts"] svg,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar svg {
+    color: var(--custom-font-color-action, #ffffff) !important;
     fill: currentColor !important;
     stroke: currentColor !important;
+    filter: none !important;
 }
 
-/* Hotbar Overrides */
+/* Menu navigation icons */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] .menu-icon,
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent [data-panel] [data-icon],
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar svg {
+    color: var(--custom-font-color-menu, #ffffff) !important;
+    fill: currentColor !important;
+    stroke: currentColor !important;
+    filter: none !important;
+}
+
+
+/* ========================================= */
+/*   HOTBAR OVERRIDES                        */
+/* ========================================= */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar li {
     border-radius: var(--custom-radius, 0) !important;
     clip-path: var(--custom-clip-small, none) !important;
@@ -86,35 +141,41 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent
     border-radius: var(--custom-radius, 0) !important;
 }
 
-/* Targets the main pop-out menus for Spells, Items, Actions, and Skills */
+
+/* ========================================= */
+/*   SIDEBAR (Spells, Items, Actions, Skills)*/
+/* ========================================= */
 /* Hijacking the Sidebar Variables */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar {
     background: var(--custom-bg-solid) !important;
     border: 1px solid var(--custom-border) !important;
     border-radius: var(--custom-radius, 0) !important;
     box-shadow: 0 0 20px var(--custom-glow) !important;
-    
+
     /* Overriding the developer's specific variant (button) colors */
     --variant-background: rgba(0, 0, 0, 0.4) !important;
     --variant-background-hover: var(--custom-hover) !important;
     --variant-background-selected: var(--custom-border) !important;
-    --variant-color-selected: #000 !important; /* Dark text on bright backgrounds for legibility */
+    --variant-color-selected: #000 !important;
+    /* Dark text on bright backgrounds for legibility */
     --variant-box-shadow: inset 0 0 0 1px var(--custom-border) !important;
 }
 
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar header {
     background: var(--custom-header) !important;
-    border-bottom: 2px solid var(--custom-border) !important; /* Thicker border for contrast */
+    border-bottom: 2px solid var(--custom-border) !important;
+    /* Thicker border for contrast */
     border-radius: var(--custom-radius, 0) !important;
     margin-top: 8px !important;
     margin-bottom: 6px !important;
     padding: 4px 8px !important;
-    
+
     /* Typography adjustments to make it pop */
-    font-size: 1.10em !important; 
+    font-size: 1.10em !important;
     font-weight: bold !important;
     text-transform: uppercase !important;
-    text-shadow: 0 0 8px var(--custom-glow) !important; /* Neon text glow */
+    text-shadow: 0 0 8px var(--custom-glow) !important;
+    /* Neon text glow */
     color: #ffffff !important;
 }
 
@@ -125,7 +186,7 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar he
 
 /* Individual Items (Spells, Weapons, Skills, Consumables) */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar .item {
-    background: rgba(0, 0, 0, 0.2) !important; 
+    background: rgba(0, 0, 0, 0.2) !important;
     border: 1px solid transparent !important;
     border-radius: var(--custom-radius, 0) !important;
     clip-path: var(--custom-clip-small, none) !important;
@@ -158,7 +219,10 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar [d
     clip-path: var(--custom-clip-small, none) !important;
 }
 
-/* Targets the PF2e HUD Combat Tracker */
+
+/* ========================================= */
+/*   COMBAT TRACKER                          */
+/* ========================================= */
 /* Main Tracker Container */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker {
     background: var(--custom-bg-solid) !important;
@@ -204,13 +268,20 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tracker .c
     clip-path: var(--custom-clip-small, none) !important;
 }
 
-/* Targets the PF2e HUD Tooltip containers */
+
+/* ========================================= */
+/*   TOOLTIP — TRANSPARENT (Issue 1)         */
+/* ========================================= */
+/* The tooltip floats directly over the token on the canvas.
+   We keep themed text, glow, and border but make the background
+   transparent so the token artwork remains visible beneath. */
+
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip {
-    --outer-background: var(--custom-bg-solid) !important;
+    --outer-background: transparent !important;
     --outer-border: 1px solid var(--custom-border) !important;
     --outer-border-radius: var(--custom-radius, 0) !important;
     --outer-box-shadow: 0 0 10px var(--custom-glow) !important;
-    background: var(--outer-background) !important;
+    background: transparent !important;
     border: var(--outer-border) !important;
     border-radius: var(--outer-border-radius) !important;
     box-shadow: var(--outer-box-shadow) !important;
@@ -218,21 +289,26 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip {
     padding: 6px 8px !important;
 }
 
-/* Tooltip Content Wrapper */
+/* Tooltip children — inherit transparency, only style text */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .distance,
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .status,
-body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip > * {
-    background: var(--outer-background) !important;
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip>* {
+    background: transparent !important;
     border: var(--outer-border) !important;
-    border-radius: var(--outer-border-radius) !important;
-    box-shadow: var(--outer-box-shadow) !important;
+    box-shadow: none !important;
     color: var(--custom-text, #ffffff) !important;
 }
 
-/* The Status "Health/Status" Label */
+/* The Status "Health/Status" Label — keep the themed text glow for readability */
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .status {
-    text-shadow: 0 0 5px var(--custom-glow) !important;
+    text-shadow: 0 0 5px var(--custom-glow), 0 0 10px rgba(0, 0, 0, 0.8) !important;
 }
+
+/* Distance label — also needs glow for readability over token art */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-tooltip .distance {
+    text-shadow: 0 0 5px var(--custom-glow), 0 0 10px rgba(0, 0, 0, 0.8) !important;
+}
+
 
 /* ========================================= */
 /*    NATIVE PF2E SYSTEM DIALOGS             */
