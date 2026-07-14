@@ -51,3 +51,64 @@ body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent
 body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-persistent #hotbar #action-bar li img {
     border-radius: var(--custom-radius, 0) !important;
 }
+
+/* Targets the main pop-out menus for Spells, Items, Actions, and Skills */
+/* Hijacking the Sidebar Variables */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar {
+    background: var(--custom-bg-solid) !important;
+    border: 1px solid var(--custom-border) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    box-shadow: 0 0 20px var(--custom-glow) !important;
+    
+    /* Overriding the developer's specific variant (button) colors */
+    --variant-background: rgba(0, 0, 0, 0.4) !important;
+    --variant-background-hover: var(--custom-hover) !important;
+    --variant-background-selected: var(--custom-border) !important;
+    --variant-color-selected: #000 !important; /* Dark text on bright backgrounds for legibility */
+    --variant-box-shadow: inset 0 0 0 1px var(--custom-border) !important;
+}
+
+/* Section Headers */
+/* Styles the category dividers (e.g., "Cantrips", "Rank 1", "Melee Attacks") */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar header {
+    background: var(--custom-header) !important;
+    border-bottom: 1px solid var(--custom-border) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    margin-bottom: 4px !important;
+    padding-left: 8px !important;
+}
+
+/* Individual Items (Spells, Weapons, Skills, Consumables) */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar .item {
+    background: rgba(0, 0, 0, 0.2) !important; 
+    border: 1px solid transparent !important;
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+    transition: all 0.2s ease-in-out !important;
+    margin-bottom: 2px !important;
+}
+
+/* Adds the CRT holographic flash when you hover over an item in your list */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar .item:hover {
+    border-color: var(--custom-border) !important;
+    box-shadow: inset 0 0 8px var(--custom-glow) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* The Action Variant Buttons (Strikes, Damage, Multi-Attack Penalty) */
+/* This ensures the actual clickable roll buttons share your XCOM/Cyberpunk geometries */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar .variant {
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+    transition: all 0.1s ease-in-out !important;
+}
+
+/* Search & Filter Inputs */
+/* Ensures the top search bar matches the theme rather than looking like standard HTML */
+body[class*="pf2e-hud-theme-"]:not(.pf2e-hud-theme-default) #pf2e-hud-sidebar [data-panel="filter"] input {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid var(--custom-border) !important;
+    color: var(--custom-text, #fff) !important;
+    border-radius: var(--custom-radius, 0) !important;
+    clip-path: var(--custom-clip-small, none) !important;
+}
