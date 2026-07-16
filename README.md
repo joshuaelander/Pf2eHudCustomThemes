@@ -1,47 +1,31 @@
- # Custom Themes for PF2e HUD
+# Custom Themes for PF2e HUD
 
-A non-destructive, purely visual theme engine for the [PF2e HUD](https://foundryvtt.com/packages/pf2e-hud) module in Foundry VTT.
+A lightweight, purely visual theme engine for the [PF2e HUD](https://foundryvtt.com/packages/pf2e-hud) module in Foundry VTT.
 
-## 📖 Overview
+PF2e HUD is an incredibly powerful tool for managing your Pathfinder 2e characters, but its default look is built for function over form. This module gives the HUD a massive visual upgrade, letting you match the interface to the aesthetic of your world—whether you are exploring ancient dungeons, fighting megacorporations, or fending off alien invasions.
 
-PF2e HUD is an incredibly powerful utilitarian dashboard for Pathfinder 2e, but its default aesthetic is highly functional rather than thematic. This module acts as a **Presentation Layer Overlay**. 
+## ✨ Why Use This Module?
 
-Rather than relying on fragile JavaScript render hooks that break when the core module updates, this project uses a strict **CSS-only injection architecture**. It safely layers new geometries, colors, and animations over the existing DOM structure without ever touching the underlying event listeners or action economy logic.
+* **Safe & Lightweight:** This module is purely visual. It overlays new colors, shapes, and animations without touching the underlying code of the core PF2e HUD. It won't break your game, cause lag, or mess with your action economy.
+* **Per-Player Customization:** Themes are applied locally! The Fighter can use the classic Fantasy theme, the Alchemist can use Cyberpunk, and the GM can use Minimalist Dark Mode—all in the same game, without affecting each other.
+* **Seamless Integration:** Works perfectly with standard Foundry hotbar macros you drag into the HUD ecosystem.
+* **Theme-Aware Tooltips:** Hover information and tooltips automatically shift to match your active theme, keeping your entire UI visually consistent.
 
-## ⚙️ How It Works
+## 🎭 Included Themes
 
-The module utilizes a three-step pipeline to apply themes safely:
+You can easily swap between themes in the module settings. The current roster includes:
 
-1. **The Settings Injector:** `main.js` registers a dropdown in the core Foundry settings menu. When a player selects a theme, it applies a master scoping class (e.g., `.pf2e-hud-theme-xcom`) directly to the `document.body`. This allows individual players to choose their own UI themes without affecting the GM or other players.
-2. **Variable Hijacking:** The base module uses CSS variables for its layout (e.g., `--panel-background`, `--outer-border`, `--outer-border-radius`) applied to the `#pf2e-hud-persistent` container[cite: 3]. This theme engine hijacks those root variables, forcing the base HUD to natively inherit our custom colors and border styles without complex overriding.
-3. **Targeted Clip-Paths:** To reshape the UI, we map custom CSS `clip-path` geometries directly to the base module's stable layout attributes, such as `[data-panel="shortcuts"]`[cite: 1] and `#hotbar #action-bar li`[cite: 4].
+* **⚔️ Fantasy / Parchment:** Leather textures, brass borders, and stylized typography. Perfect for classic fantasy adventures or atmospheric campaigns like *Season of Ghosts*.
+* **🛸 XCOM Tactical:** A sleek, modern sci-fi interface featuring sharp, angled geometries and holographic cyan glows over deep navy backgrounds. Ideal for tactical RPGs or modern settings.
+* **🦾 Cyberpunk:** High-contrast neon pink and yellow, darkened glass panels, and subtle glitch animations when you hover over actions.
+* **🌙 Minimalist Dark Mode:** A sleek, distraction-free UI that strips away borders and relies on pure negative space and subtle drop-shadows.
 
-## 🚀 Current Implementations
+## ⚙️ Customization Options
 
-### The XCOM Tactical Theme
-A sleek, modern sci-fi interface inspired by tactical RPGs, perfect for modern, sci-fi, or cyberpunk campaigns.
-* **Angled Geometries:** Replaces standard rounded corners with sharp, `clip-path` polygon cuts on all major panels and action shortcuts.
-* **Holographic Glows:** Utilizes layered `box-shadow` and `text-shadow` properties to create a CRT-style emission effect.
-* **Color Palette:** Deep navy backgrounds (`#11212C`) heavily contrasted by neon cyan borders (`#3FD6FF`).
-* **Macro Integration:** Seamlessly applies the XCOM aesthetic to standard Foundry hotbar macros dragged into the HUD ecosystem.
+Want to tweak your theme a bit further? This module includes additional settings so you can get things looking exactly right without knowing how to code:
 
-## 🗺️ Development Milestones
+* **Icon Tinting:** Toggle a setting to automatically tint HUD and menu icons so they perfectly match the color palette of your selected theme.
+* **Font Overrides:** Choose your preferred fonts for the HUD and menus. We've included built-in support for stylish options like *Orbitron*, *Rajdhani*, *Cinzel*, and *Inter*.
 
-### ✅ Phase 1: Core Architecture & Visual Theme Engine (Completed)
-- [x] Establish safe `module.json` dependency loading (loads after core PF2e HUD).
-- [x] Build the `main.js` theme-switcher and settings registration.
-- [x] Map the core CSS Developer Targets (`#pf2e-hud-persistent`, `[data-panel]`, etc.).
-- [x] Implement the **XCOM Tactical** theme using CSS variables and `clip-path` geometries.
-- [x] Verify zero conflicts with `ApplicationV2` render lifecycles.
-
-### ⏳ Phase 2: Theme Expansion (Completed)
-The architecture is built to support infinite themes. The next step is expanding the visual roster.
-- [x] **Fantasy / Parchment Theme:** Leather textures, brass borders, and stylized serif typography.
-- [x] **Cyberpunk Theme:** High-contrast neon pink/yellow, glitch animations on hover, and darkened glass panels.
-- [x] **Minimalist Dark Mode:** Stripping away all borders and using pure negative space and subtle drop-shadows for a distraction-free UI.
-
-### ✅ Phase 3: User Customization & Polish (Completed)
-Giving users more control over their chosen theme without needing to edit CSS files.
-- [x] **Theme-Aware HUD Tooltips:** Tooltip styling now inherits the active HUD theme so hover info feels consistent with the rest of the interface.
-- [x] **Icon Tinting Toggle:** A module setting lets users tint HUD and menu icons to better match the selected theme.
-- [x] **Font Overrides:** Module settings now allow users to choose HUD and menu font stacks, including Google-hosted options such as Orbitron, Rajdhani, Cinzel, and Inter.
+## 📥 Installation
+Manifest URL coming soon!
